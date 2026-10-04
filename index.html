@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mateo Brandy — Portfolio GEII</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Big+Shoulders+Display:wght@800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#dcdcdc;--ink:#141414;--mute:#555;--acc:#2b3cff;--line:#14141433;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121212;--ink:#e6e6e6;--mute:#8a8a8a;--acc:#7b87ff;--line:#e6e6e633}}
+:root[data-theme="dark"]{--bg:#121212;--ink:#e6e6e6;--mute:#8a8a8a;--acc:#7b87ff;--line:#e6e6e633}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font:400 13px/1.6 "Space Mono",ui-monospace,Menlo,monospace;overflow-x:hidden;transition:background .4s,color .4s}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:fixed;inset:0 0 auto 0;z-index:10;display:flex;justify-content:space-between;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) 20px 14px;mix-blend-mode:difference;color:#fff}
+header nav{display:flex;gap:18px}
+header a:hover,header button:hover,.top button:hover{text-decoration:line-through}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:90px 20px 28px}
+.name{font:900 clamp(72px,19vw,300px)/.82 "Big Shoulders Display",Impact,sans-serif;text-transform:uppercase}
+.name .l{display:block;overflow:hidden;padding-top:.04em}
+.name span span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{transform:none}}
+.lead{max-width:30em;margin-top:24px;font-size:clamp(15px,2vw,19px);line-height:1.45}
+.go{display:inline-block;margin-top:18px;padding:8px 14px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.go:hover{background:var(--ink);color:var(--bg)}
+.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px;color:var(--mute)}
+.tick{overflow:hidden;white-space:nowrap;border-block:1px solid var(--line);padding:10px 0}
+.tick div{display:inline-block;animation:slide 28s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:90px 20px}
+h2.s{font-weight:400;color:var(--mute);margin-bottom:22px;max-width:760px;margin-inline:auto}
+.list{max-width:760px;margin:0 auto}
+.row{display:grid;grid-template-columns:48px 1fr auto;gap:12px;width:100%;padding:10px 8px;border-bottom:1px solid var(--line);transition:background .2s,color .2s,padding .3s,opacity .5s,transform .5s}
+.row small{display:block;color:var(--mute);font-size:12px}
+.row:hover,.row:focus-visible{background:var(--ink);color:var(--bg);padding-left:20px}
+.row:hover small,.row:focus-visible small{color:inherit;opacity:.75}
+.row.hide{opacity:0;transform:translateY(8px)}
+.about{max-width:760px;margin:0 auto;display:grid;gap:26px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;color:var(--mute)}
+.cols b{display:block;color:var(--ink);font-weight:700}
+.mail{display:block;font:900 clamp(40px,10vw,150px)/.9 "Big Shoulders Display",Impact,sans-serif;text-transform:uppercase;padding:20px 20px 0;transition:color .2s,letter-spacing .5s}
+.mail:hover{color:var(--acc);letter-spacing:.03em}
+footer{padding:50px 20px calc(30px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line)}
+footer nav{display:flex;gap:16px}
+#dt{position:fixed;inset:0;z-index:20;background:var(--bg);overflow-y:auto;padding-top:env(safe-area-inset-top,0px)}
+#dt[hidden]{display:none}
+#dt.open{animation:rev .6s cubic-bezier(.7,0,.2,1)}
+@keyframes rev{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
+.top{position:sticky;top:0;display:flex;justify-content:space-between;padding:14px 20px;background:var(--bg);border-bottom:1px solid var(--line)}
+.body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:40px;padding:50px 20px 90px;max-width:1200px;margin:0 auto}
+.l p{color:var(--mute)}
+.l h2{font:900 clamp(48px,8vw,110px)/.9 "Big Shoulders Display",Impact,sans-serif;text-transform:uppercase;margin:10px 0 20px}
+.tg{display:flex;flex-wrap:wrap;gap:8px}
+.tg span{border:1px solid var(--ink);padding:2px 10px;border-radius:99px;font-size:12px}
+.r{max-width:60ch}
+.r h3{font-weight:400;color:var(--mute);margin:34px 0 8px;border-top:1px solid var(--line);padding-top:10px}
+.r h3:first-child{margin-top:0;border:0;padding:0}
+.r h4{font-size:15px;margin-top:14px}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.figs div{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px);border:1px solid var(--line)}
+figcaption{font-size:12px;color:var(--mute);margin-top:6px}
+#pl{position:fixed;left:0;top:0;z-index:40;pointer-events:none;opacity:0;transition:opacity .3s}
+#pl.on{opacity:1}
+#pr{position:absolute;left:-27px;top:-23px;width:54px;height:47px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAfCAYAAACPvW/2AAABnElEQVR42s3XYXKCMBAF4LeMJ2HTG3iCtmcwngCvpJ6g9gylFzHLVdIfziJGggEidmcYI6Py+VxiAvyzIgAwJfvuSdcIvQpU6OD98wNncTiLgynZh8ilaqWDqqqw2+0AAGdxAABjjAcAkeUSK7pPFKSPzjk4d01sidTaHvr6PoGI4L3H8XgEAOz3exDdhmOMacfPSI4AgJn96XQFAWhRh8Mh+uYuLhew/QBNqVuKegTTeuML0NN03CBoCirEjZ1GHoJC1FiY/rTk03BJoByo1OSSQX2oObAY7kb4ClQX5xqh0aAYaipMpw69K4sp36aqqt7zOsOnpKGHiFB3ipiU0KOkwrSCXrm7bvS/zFOepDQtIoIxl97QYwhzBxIRstZmQzHz6Bm7QIYaQs1afkyt9Xr9f0DbjYUpebDBFwNtN/amX54CEhHqXigGCV9DHvj9qZdPyFr71F1JMRajt3EMNTelVSqkb4nqGqHcC/8iNZXYBNeXVF3XeRNyjdB2Yy97soR+CZOiGZllb05m9gqas9jPXqZkz/ya7XjW+gPJh+0LFSJSRAAAAABJRU5ErkJggg==) center/contain no-repeat;image-rendering:pixelated;transition:scale .35s cubic-bezier(.3,1.7,.5,1),translate .35s}
+#sh{position:absolute;left:-20px;top:-6px;width:40px;height:12px;border-radius:50%;background:#000;filter:blur(4px);opacity:.2;transform:translate(18px,32px);transition:.35s}
+#pl.land #pr{scale:.8;translate:17px 15px}
+#pl.land #sh{opacity:.45;transform:translate(10px,20px) scale(.6)}
+@media(hover:hover) and (pointer:fine){html,body,a,button{cursor:none}}
+@media(hover:none){#pl{display:none}}
+@media(max-width:760px){.body{grid-template-columns:1fr;gap:24px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.name span span{transform:none}}
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+  <a href="#top">MATEO BRANDY</a>
+  <span id="clock">--:--:--</span>
+  <nav><a href="#work">Projets</a><a href="#about">Parcours</a><a href="#contact">Contact</a><button id="theme" aria-label="Changer de thème">Thème</button></nav>
+</header>
+<main id="top">
+<div class="hero">
+  <h1 class="name" aria-label="Mateo Brandy">
+    <span class="l" aria-hidden="true"><span style="animation-delay:.1s">Mateo</span></span>
+    <span class="l" aria-hidden="true"><span style="animation-delay:.28s">Brandy</span></span>
+  </h1>
+  <p class="lead">Étudiant en BUT GEII à Toulouse. Je conçois, je teste et je filme mes projets techniques.</p>
+  <div><a class="go" href="#work">Voir mes projets ↓</a></div>
+  <div class="meta"><span>BUT 2 GEII · IUT DE TOULOUSE</span><span>43.6047° N, 1.4442° E</span></div>
+</div>
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<section id="work">
+  <h2 class="s">Projets : clique sur une ligne pour l'ouvrir</h2>
+  <div class="list" id="list"></div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <h2 class="s" style="margin:0">Parcours</h2>
+    <div class="cols">
+      <div><b>Formation</b>BUT GEII, IUT de Toulouse. Deuxième année.</div>
+      <div><b>Vie associative</b>Président du FabLab GEII : j'anime l'asso et ses réseaux sociaux.</div>
+      <div><b>Contenu</b>Je filme mes projets sur YouTube et Instagram.</div>
+    </div>
+    <a class="go" href="cv.pdf" style="justify-self:start">Voir mon CV (PDF)</a>
+  </div>
+</section>
+<section id="contact" style="padding-bottom:0"><h2 class="s">Contact</h2></section>
+</main>
+<a class="mail" href="mailto:hello@exemple.fr">Dis bonjour</a>
+<footer><span>MATEO BRANDY © 2026</span><nav><a href="#">YouTube</a><a href="#">Instagram</a><a href="#">LinkedIn</a></nav></footer>
+</div>
+
+<div id="dt" role="dialog" aria-modal="true" aria-labelledby="dt-t" hidden>
+  <div class="top"><button id="bk">← Tous les projets</button><button id="nx">Projet suivant →</button></div>
+  <div class="body" id="db"></div>
+</div>
+<div id="pl"><div id="sh"></div><div id="pr"></div></div>
+
+<script>
+const P=[
+{t:"Krokmou, dragon volant",y:2026,s:"Mon projet perso phare",c:"Construire un Krokmou (le dragon de Dragons) qui vole pour de vrai. C'est le projet qui résume le mieux ma façon de bosser : je pars d'une idée folle et je la rends testable.",a:[["Conception","À compléter : structure, motorisation, électronique de vol."],["Tests","À compléter : premiers essais, mesures, ce qui a cassé et comment je l'ai corrigé."]],r:"À compléter : ce que ce projet prouve sur toi et ce que tu referais sans problème.",tg:["C1 · Concevoir","C2 · Vérifier","Autonomie"]},
+{t:"Home server Docker",y:2026,s:"Mes services hébergés chez moi",c:"Un serveur sous Ubuntu Server 24.04 avec Docker Compose : Minecraft (Crafty), Nextcloud, Portainer et Filebrowser.",a:[["Installation","Mise en place de la stack et des conteneurs."],["Dépannage","Résolution de problèmes réseau et de NAT Docker pendant la mise en service."],["Choix du matériel","Comparaison de composants d'occasion (DDR3/DDR4, processeurs i3 LGA1155)."]],r:"J'ai appris à isoler un problème réseau avant de modifier la configuration, et à comparer des solutions sous contrainte de budget.",tg:["C3 · Maintenir","C1 · Concevoir","Autonomie"]},
+{t:"Mini-ITX GEEEK A30",y:2026,s:"Un PC compact et ses limites",c:"Un PC en boîtier GEEEK A30 : Ryzen 5 4500, GT 1030, carte mère A520M-ITX.",a:[["Analyse","J'ai identifié les points faibles : l'alimentation et la carte graphique."],["Contraintes","Le format FlexATX limite fortement les évolutions possibles."]],r:"Concevoir, c'est composer avec des contraintes d'encombrement, de coût et de disponibilité du matériel.",tg:["C1 · Concevoir","Adaptabilité"]},
+{t:"Habit tracker gamifié",y:2026,s:"XP, niveaux et arbres de compétences",c:"Un système de suivi d'habitudes avec XP, niveaux et récompenses réelles. Les arbres de compétences couvrent GEII, Dev, Serveur et Contenu.",a:[["Version Coda","Dashboard avec points d'expérience et paliers de récompense."],["Version multi-appareils","Serveur Python local et fichier JSON, synchro MEGA, interfaces HTML mobile et dashboard avec heatmaps et séries."]],r:"À compléter : ce que ce projet t'a appris sur le développement et sur ta propre organisation.",tg:["C1 · Concevoir","Autonomie"]},
+{t:"OpenWhisper",y:2026,s:"Dictée vocale open source",c:"Un projet open source de dictée façon Whisper Flow, démarré récemment.",a:[["Transcription","Whisper Cloud pour transcrire la voix."],["Nettoyage du texte","Un modèle Llama local fait l'étape IA, sans passer par un serveur distant."]],r:"Un modèle local évite de dépendre d'un quota hebdomadaire de mots, et le résultat fonctionne très bien.",tg:["C1 · Concevoir","C2 · Vérifier"]},
+{t:"FabLab GEII",y:2025,s:"L'asso que je préside",c:"Je préside l'association FabLab GEII et je gère ses réseaux sociaux.",a:[["Animation","À compléter : ateliers et projets menés avec les membres."],["Communication","Gestion des réseaux sociaux de l'asso."]],r:"À compléter : ce que la présidence t'a appris sur le travail en équipe et l'organisation.",tg:["Travail en équipe","Communication"]}
+];
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,"0");
+const list=$("#list"),G="#%&@/\\<>[]{}=+*01";
+P.forEach((p,i)=>{const r=document.createElement("button");r.className="row hide";r.dataset.i=i;
+ r.innerHTML=`<span>[${pad(i+1)}]</span><span><b data-scr>${p.t.toUpperCase()}</b><small>${p.s}</small></span><span>[${p.y}]</span>`;list.append(r)});
+$("#tk").textContent="DRONES · FABLAB · HOME LAB · ÉLECTRONIQUE · IMPRESSION 3D · CONTENU · ".repeat(8);
+setInterval(()=>$("#clock").textContent=new Date().toLocaleTimeString("fr-FR",{timeZone:"Europe/Paris"}),1000);
+function scramble(el){const o=el.dataset.o||(el.dataset.o=el.textContent);let f=0;clearInterval(el._t);
+ el._t=setInterval(()=>{el.textContent=[...o].map((c,i)=>c===" "?c:i<f/2?c:G[Math.random()*G.length|0]).join("");if(++f>o.length*2){clearInterval(el._t);el.textContent=o}},22)}
+list.addEventListener("pointerover",e=>{const r=e.target.closest(".row");if(r)scramble(r.querySelector("b"))});
+list.addEventListener("focusin",e=>{const r=e.target.closest(".row");if(r)scramble(r.querySelector("b"))});
+new IntersectionObserver((es,io)=>{if(!es[0].isIntersecting)return;
+ [...list.children].forEach((r,i)=>setTimeout(()=>{r.classList.remove("hide");scramble(r.querySelector("b"))},i*90));io.disconnect()},{threshold:.2}).observe(list);
+// fiche projet
+const dt=$("#dt"),db=$("#db"),app=$("#app");let cur=0,from;
+function open(i){cur=i;const p=P[i];from=document.activeElement;
+ const fig=n=>`<figure><div></div><figcaption>Photo ${n} : explique ce qu'on voit et pourquoi c'est important.</figcaption></figure>`;
+ db.innerHTML=`<div class="l"><p>${pad(i+1)} / ${pad(P.length)} · ${p.y}</p><h2 id="dt-t">${p.t}</h2><div class="tg">${p.tg.map(t=>`<span>${t}</span>`).join("")}</div></div>
+ <div class="r"><h3>Contexte</h3><p>${p.c}</p><h3>Ce que j'ai fait</h3>${p.a.map(a=>`<h4>${a[0]}</h4><p>${a[1]}</p>`).join("")}<div class="figs">${fig(1)}${fig(2)}</div><h3>Ce que j'en retiens</h3><p>${p.r}</p></div>`;
+ dt.hidden=false;dt.classList.remove("open");void dt.offsetWidth;dt.classList.add("open");
+ app.inert=true;document.body.style.overflow="hidden";dt.scrollTop=0;$("#bk").focus()}
+function close(){dt.hidden=true;app.inert=false;document.body.style.overflow="";from&&from.focus()}
+list.addEventListener("click",e=>{const r=e.target.closest(".row");if(r)open(+r.dataset.i)});
+$("#bk").onclick=close;$("#nx").onclick=()=>open((cur+1)%P.length);
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!dt.hidden)close()});
+// thème
+$("#theme").onclick=()=>{const d=document.documentElement;d.dataset.theme=getComputedStyle(d).getPropertyValue("--bg").trim()==="#121212"?"light":"dark"};
+// avion en papier : vole vers la souris, atterrit sur ce qui est cliquable
+const pl=$("#pl"),pr=$("#pr");let mx=0,my=0,px=0,py=0,ang=0,on=0;
+addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY;if(!on){px=mx;py=my;on=1;pl.classList.add("on")}});
+document.addEventListener("pointerover",e=>pl.classList.toggle("land",!!(e.target.closest&&e.target.closest("a,button"))));
+(function f(){const land=pl.classList.contains("land"),dx=mx-px,dy=my-py,k=land?.45:.16;px+=dx*k;py+=dy*k;
+ const t=land?0:Math.hypot(dx,dy)>6?Math.atan2(dy,dx)*57.3+135:ang;
+ ang+=(((t-ang)%360+540)%360-180)*.2;
+ pl.style.transform=`translate(${px}px,${py}px)`;pr.style.transform=`rotate(${ang}deg)`;requestAnimationFrame(f)})();
+</script>
+</body>
+</html>
