@@ -64,6 +64,7 @@ footer nav{display:flex;gap:16px}
 .r h4{font-size:15px;margin-top:14px}
 .figs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
 .figs div{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px);border:1px solid var(--line)}
+.figs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--line)}
 figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 #pl{position:fixed;left:0;top:0;z-index:40;pointer-events:none;opacity:0;transition:opacity .3s}
 #pl.on{opacity:1}
@@ -133,12 +134,12 @@ figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 <script>
 // Vraie couverture : ajoute img:"images/nom.webp" dans un projet
 const P=[
-{t:"Krokmou, dragon volant",y:2026,s:"Mon projet perso phare",c:"Construire un Krokmou (le dragon de Dragons) qui vole pour de vrai. C'est le projet qui résume le mieux ma façon de bosser : je pars d'une idée folle et je la rends testable.",a:[["Conception","À compléter : structure, motorisation, électronique de vol."],["Tests","À compléter : premiers essais, mesures, ce qui a cassé et comment je l'ai corrigé."]],r:"À compléter : ce que ce projet prouve sur toi et ce que tu referais sans problème.",tg:["C1 · Concevoir","C2 · Vérifier","Autonomie"]},
-{t:"Home server Docker",y:2026,s:"Mes services hébergés chez moi",c:"Un serveur sous Ubuntu Server 24.04 avec Docker Compose : Minecraft (Crafty), Nextcloud, Portainer et Filebrowser.",a:[["Installation","Mise en place de la stack et des conteneurs."],["Dépannage","Résolution de problèmes réseau et de NAT Docker pendant la mise en service."],["Choix du matériel","Comparaison de composants d'occasion (DDR3/DDR4, processeurs i3 LGA1155)."]],r:"J'ai appris à isoler un problème réseau avant de modifier la configuration, et à comparer des solutions sous contrainte de budget.",tg:["C3 · Maintenir","C1 · Concevoir","Autonomie"]},
-{t:"Mini-ITX GEEEK A30",y:2026,s:"Un PC compact et ses limites",c:"Un PC en boîtier GEEEK A30 : Ryzen 5 4500, GT 1030, carte mère A520M-ITX.",a:[["Analyse","J'ai identifié les points faibles : l'alimentation et la carte graphique."],["Contraintes","Le format FlexATX limite fortement les évolutions possibles."]],r:"Concevoir, c'est composer avec des contraintes d'encombrement, de coût et de disponibilité du matériel.",tg:["C1 · Concevoir","Adaptabilité"]},
+{t:"Krokmou, dragon volant",y:2026,img:"images/krokmou-vol.webp",f:[["images/krokmou-sourire.webp","Référence du projet : Krokmou en vol, tiré du film Dragons."],["images/krokmou-foret.webp","Le modèle à reproduire : Krokmou, le dragon du film."]],s:"Mon projet perso phare",c:"Construire un Krokmou (le dragon de Dragons) qui vole pour de vrai. C'est le projet qui résume le mieux ma façon de bosser : je pars d'une idée folle et je la rends testable.",a:[["Conception","À compléter : structure, motorisation, électronique de vol."],["Tests","À compléter : premiers essais, mesures, ce qui a cassé et comment je l'ai corrigé."]],r:"À compléter : ce que ce projet prouve sur toi et ce que tu referais sans problème.",tg:["C1 · Concevoir","C2 · Vérifier","Autonomie"]},
+{t:"Home server Docker",y:2026,img:"images/home-serveur.webp",s:"Mes services hébergés chez moi",c:"Un serveur sous Ubuntu Server 24.04 avec Docker Compose : Minecraft (Crafty), Nextcloud, Portainer et Filebrowser.",a:[["Installation","Mise en place de la stack et des conteneurs."],["Dépannage","Résolution de problèmes réseau et de NAT Docker pendant la mise en service."],["Choix du matériel","Comparaison de composants d'occasion (DDR3/DDR4, processeurs i3 LGA1155)."]],r:"J'ai appris à isoler un problème réseau avant de modifier la configuration, et à comparer des solutions sous contrainte de budget.",tg:["C3 · Maintenir","C1 · Concevoir","Autonomie"]},
+{t:"Mini-ITX GEEEK A30",y:2026,img:"images/pc-mini-itx.webp",s:"Un PC compact et ses limites",c:"Un PC en boîtier GEEEK A30 : Ryzen 5 4500, GT 1030, carte mère A520M-ITX.",a:[["Analyse","J'ai identifié les points faibles : l'alimentation et la carte graphique."],["Contraintes","Le format FlexATX limite fortement les évolutions possibles."]],r:"Concevoir, c'est composer avec des contraintes d'encombrement, de coût et de disponibilité du matériel.",tg:["C1 · Concevoir","Adaptabilité"]},
 {t:"Habit tracker gamifié",y:2026,s:"XP, niveaux et arbres de compétences",c:"Un système de suivi d'habitudes avec XP, niveaux et récompenses réelles. Les arbres de compétences couvrent GEII, Dev, Serveur et Contenu.",a:[["Version Coda","Dashboard avec points d'expérience et paliers de récompense."],["Version multi-appareils","Serveur Python local et fichier JSON, synchro MEGA, interfaces HTML mobile et dashboard avec heatmaps et séries."]],r:"À compléter : ce que ce projet t'a appris sur le développement et sur ta propre organisation.",tg:["C1 · Concevoir","Autonomie"]},
 {t:"OpenWhisper",y:2026,s:"Dictée vocale open source",c:"Un projet open source de dictée façon Whisper Flow, démarré récemment.",a:[["Transcription","Whisper Cloud pour transcrire la voix."],["Nettoyage du texte","Un modèle Llama local fait l'étape IA, sans passer par un serveur distant."]],r:"Un modèle local évite de dépendre d'un quota hebdomadaire de mots, et le résultat fonctionne très bien.",tg:["C1 · Concevoir","C2 · Vérifier"]},
-{t:"FabLab GEII",y:2025,s:"L'asso que je préside",c:"Je préside l'association FabLab GEII et je gère ses réseaux sociaux.",a:[["Animation","À compléter : ateliers et projets menés avec les membres."],["Communication","Gestion des réseaux sociaux de l'asso."]],r:"À compléter : ce que la présidence t'a appris sur le travail en équipe et l'organisation.",tg:["Travail en équipe","Communication"]}
+{t:"FabLab GEII",y:2025,img:"images/fablab-impression3d.webp",s:"L'asso que je préside",c:"Je préside l'association FabLab GEII et je gère ses réseaux sociaux.",a:[["Animation","À compléter : ateliers et projets menés avec les membres."],["Communication","Gestion des réseaux sociaux de l'asso."]],r:"À compléter : ce que la présidence t'a appris sur le travail en équipe et l'organisation.",tg:["Travail en équipe","Communication"]}
 ];
 const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,"0");
 const list=$("#list"),G="#%&@/\\<>[]{}=+*01";
@@ -155,6 +156,7 @@ const art=i=>{const[a,b]=i%2?["#90D5FF","#FFBF00"]:["#FFBF00","#90D5FF"];return`
 function glitch(){cv.classList.remove("gl");void cv.offsetWidth;cv.classList.add("gl")}
 function hov(r){if(!r)return;const i=+r.dataset.i,p=P[i];scramble(r.querySelector("b"));
  cv.style.setProperty("--img",p.img?`url("${p.img}")`:art(i));cv.classList.add("on");if(i!==last){glitch();last=i}}
+addEventListener("load",()=>P.forEach(p=>{if(p.img)new Image().src=p.img}));
 const off=()=>{cv.classList.remove("on");last=-1};
 list.addEventListener("pointerover",e=>hov(e.target.closest(".row")));
 list.addEventListener("focusin",e=>hov(e.target.closest(".row")));
@@ -165,7 +167,7 @@ new IntersectionObserver((es,io)=>{if(!es[0].isIntersecting)return;
 // fiche projet
 const dt=$("#dt"),db=$("#db"),app=$("#app");let cur=0,from;
 function open(i){cur=i;const p=P[i];from=document.activeElement;
- const fig=n=>`<figure><div></div><figcaption>Photo ${n} : explique ce qu'on voit et pourquoi c'est important.</figcaption></figure>`;
+ const fig=n=>{const f=(p.f||[])[n-1];return f?`<figure><img src="${f[0]}" alt="${f[1]}" loading="lazy"><figcaption>${f[1]}</figcaption></figure>`:`<figure><div></div><figcaption>Photo ${n} : explique ce qu'on voit et pourquoi c'est important.</figcaption></figure>`};
  db.innerHTML=`<div class="l"><p>${pad(i+1)} / ${pad(P.length)} · ${p.y}</p><h2 id="dt-t">${p.t}</h2><div class="tg">${p.tg.map(t=>`<span>${t}</span>`).join("")}</div></div>
  <div class="r"><h3>Contexte</h3><p>${p.c}</p><h3>Ce que j'ai fait</h3>${p.a.map(a=>`<h4>${a[0]}</h4><p>${a[1]}</p>`).join("")}<div class="figs">${fig(1)}${fig(2)}</div><h3>Ce que j'en retiens</h3><p>${p.r}</p></div>`;
  dt.hidden=false;dt.classList.remove("open");void dt.offsetWidth;dt.classList.add("open");
