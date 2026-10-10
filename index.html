@@ -65,6 +65,11 @@ footer nav{display:flex;gap:16px}
 .figs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
 .figs div{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--line) 0 10px,transparent 10px 20px);border:1px solid var(--line)}
 .figs img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--line)}
+.pj{display:block;width:100%;padding:12px 8px;border-bottom:1px solid var(--line);transition:background .2s,padding .3s}
+.pj:hover,.pj:focus-visible{background:var(--or);color:#141414;padding-left:16px}
+.pj b{display:block;margin-bottom:6px}
+.lg{font-size:12px;color:var(--mute);margin-top:10px}
+.r .go{margin-top:8px}
 figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 #pl{position:fixed;left:0;top:0;z-index:40;pointer-events:none;opacity:0;transition:opacity .3s}
 #pl.on{opacity:1}
@@ -89,7 +94,7 @@ figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 <header>
   <a href="#top">MATEO BRANDY</a>
   <span id="clock">--:--:--</span>
-  <nav><a href="#work">Projets</a><a href="#about">Parcours</a><a href="#contact">Contact</a><button id="theme" aria-label="Changer de thème">Thème</button></nav>
+  <nav><a href="#work">Projets</a><a href="#about">Profil</a><a href="#contact">Contact</a><button id="theme" aria-label="Changer de thème">Thème</button></nav>
 </header>
 <main id="top">
 <div class="hero">
@@ -110,13 +115,9 @@ figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 
 <section id="about">
   <div class="about">
-    <h2 class="s" style="margin:0">Parcours</h2>
-    <div class="cols">
-      <div><b>Formation</b>BUT GEII, IUT de Toulouse. Deuxième année.</div>
-      <div><b>Vie associative</b>Président du FabLab GEII : j'anime l'asso et ses réseaux sociaux.</div>
-      <div><b>Contenu</b>Je filme mes projets sur YouTube et Instagram.</div>
-    </div>
-    <a class="go" href="cv.pdf" style="justify-self:start">Voir mon CV (PDF)</a>
+    <h2 class="s" style="margin:0">Profil</h2>
+    <p class="lead" style="margin:0">Étudiant en BUT GEII, je construis des machines, des serveurs et des outils, puis je filme le résultat pour le partager.</p>
+    <button class="row" id="prof"><span>[00]</span><span><b>MON PROFIL</b><small>Compétences par projet et CV</small></span><span>[→]</span></button>
   </div>
 </section>
 <section id="contact" style="padding-bottom:0"><h2 class="s">Contact</h2></section>
@@ -126,7 +127,7 @@ figcaption{font-size:12px;color:var(--mute);margin-top:6px}
 </div>
 
 <div id="dt" role="dialog" aria-modal="true" aria-labelledby="dt-t" hidden>
-  <div class="top"><button id="bk">← Tous les projets</button><button id="nx">Projet suivant →</button></div>
+  <div class="top"><button id="bk">← Retour</button><button id="nx">Projet suivant →</button></div>
   <div class="body" id="db"></div>
 </div>
 <div id="pl"><div id="sh"></div><div id="pr"></div></div>
@@ -164,17 +165,28 @@ list.addEventListener("pointerleave",off);list.addEventListener("focusout",off);
 setInterval(()=>cv.classList.contains("on")&&glitch(),2200);
 new IntersectionObserver((es,io)=>{if(!es[0].isIntersecting)return;
  [...list.children].forEach((r,i)=>setTimeout(()=>{r.classList.remove("hide");scramble(r.querySelector("b"))},i*90));io.disconnect()},{threshold:.2}).observe(list);
-// fiche projet
-const dt=$("#dt"),db=$("#db"),app=$("#app");let cur=0,from;
-function open(i){cur=i;const p=P[i];from=document.activeElement;
- const fig=n=>{const f=(p.f||[])[n-1];return f?`<figure><img src="${f[0]}" alt="${f[1]}" loading="lazy"><figcaption>${f[1]}</figcaption></figure>`:`<figure><div></div><figcaption>Photo ${n} : explique ce qu'on voit et pourquoi c'est important.</figcaption></figure>`};
- db.innerHTML=`<div class="l"><p>${pad(i+1)} / ${pad(P.length)} · ${p.y}</p><h2 id="dt-t">${p.t}</h2><div class="tg">${p.tg.map(t=>`<span>${t}</span>`).join("")}</div></div>
- <div class="r"><h3>Contexte</h3><p>${p.c}</p><h3>Ce que j'ai fait</h3>${p.a.map(a=>`<h4>${a[0]}</h4><p>${a[1]}</p>`).join("")}<div class="figs">${fig(1)}${fig(2)}</div><h3>Ce que j'en retiens</h3><p>${p.r}</p></div>`;
+// pages : fiche projet + profil
+const dt=$("#dt"),db=$("#db"),app=$("#app"),bk=$("#bk"),nx=$("#nx");let cur=0,from,back=null;
+function show(html,b,n){back=b||null;if(dt.hidden)from=document.activeElement;off();
+ db.innerHTML=html;bk.textContent=back?"← Profil":"← Retour";nx.hidden=!n;
  dt.hidden=false;dt.classList.remove("open");void dt.offsetWidth;dt.classList.add("open");
- app.inert=true;document.body.style.overflow="hidden";dt.scrollTop=0;$("#bk").focus()}
-function close(){dt.hidden=true;app.inert=false;document.body.style.overflow="";from&&from.focus()}
+ app.inert=true;document.body.style.overflow="hidden";dt.scrollTop=0;bk.focus()}
+function open(i,b){cur=i;const p=P[i];
+ const fig=n=>{const f=(p.f||[])[n-1];return f?`<figure><img src="${f[0]}" alt="${f[1]}" loading="lazy"><figcaption>${f[1]}</figcaption></figure>`:`<figure><div></div><figcaption>Photo ${n} : explique ce qu'on voit et pourquoi c'est important.</figcaption></figure>`};
+ show(`<div class="l"><p>${pad(i+1)} / ${pad(P.length)} · ${p.y}</p><h2 id="dt-t">${p.t}</h2><div class="tg">${p.tg.map(t=>`<span>${t}</span>`).join("")}</div></div>
+ <div class="r"><h3>Contexte</h3><p>${p.c}</p><h3>Ce que j'ai fait</h3>${p.a.map(a=>`<h4>${a[0]}</h4><p>${a[1]}</p>`).join("")}<div class="figs">${fig(1)}${fig(2)}</div><h3>Ce que j'en retiens</h3><p>${p.r}</p></div>`,b,1)}
+function profil(){
+ show(`<div class="l"><p>BUT 2 GEII · IUT de Toulouse</p><h2 id="dt-t">Profil</h2><p>Maker et créateur de contenu.</p></div>
+ <div class="r"><h3>Qui je suis</h3><p>Étudiant en BUT GEII à Toulouse, je construis des machines, des serveurs et des outils, puis je filme le résultat pour le partager. Je préfère construire et réparer plutôt qu'acheter tout fait.</p>
+ <h3>Compétences par projet</h3>${P.map((p,i)=>`<button class="pj" data-i="${i}"><b>[${pad(i+1)}] ${p.t}</b><span class="tg">${p.tg.map(t=>`<span>${t}</span>`).join("")}</span></button>`).join("")}
+ <p class="lg">C1 Concevoir, C2 Vérifier, C3 Maintenir : les compétences communes du BUT GEII. Clique sur un projet pour voir les détails.</p>
+ <h3>Parcours en bref</h3><h4>Formation</h4><p>BUT GEII, IUT de Toulouse, deuxième année.</p><h4>Vie associative</h4><p>Président du FabLab GEII : j'anime l'asso et ses réseaux sociaux.</p><h4>Contenu</h4><p>Je filme mes projets techniques sur YouTube et Instagram.</p>
+ <h3>CV</h3><p>Le détail de mes formations et expériences.</p><a class="go" href="cv.pdf" target="_blank" rel="noopener">Ouvrir mon CV (PDF)</a></div>`,0,0)}
+function close(){dt.hidden=true;app.inert=false;document.body.style.overflow="";from&&from.focus({preventScroll:true});off()}
 list.addEventListener("click",e=>{const r=e.target.closest(".row");if(r)open(+r.dataset.i)});
-$("#bk").onclick=close;$("#nx").onclick=()=>open((cur+1)%P.length);
+$("#prof").onclick=profil;$("#prof").addEventListener("pointerover",()=>scramble($("#prof b")));
+db.addEventListener("click",e=>{const r=e.target.closest(".pj");if(r)open(+r.dataset.i,1)});
+bk.onclick=()=>back?profil():close();nx.onclick=()=>open((cur+1)%P.length,back);
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!dt.hidden)close()});
 // thème
 $("#theme").onclick=()=>{const d=document.documentElement;d.dataset.theme=getComputedStyle(d).getPropertyValue("--bg").trim()==="#121212"?"light":"dark"};
