@@ -101,8 +101,8 @@ const PROJETS = [
   /* ----- 02 · Chaîne de production ----- */
   {
     titre: "Chaîne de production automatisée",
-    date: "SAE · nov. 2025",
-    annee: "2025",
+    date: "SAE · mai. 2026",
+    annee: "2026",
     accroche: "Une ligne multi-stations qui trie des jetons par couleur",
     couverture: "",
     contexte:
@@ -126,8 +126,8 @@ const PROJETS = [
   /* ----- 03 · Smart Car ----- */
   {
     titre: "Smart Car",
-    date: "SAE · janv. – mai 2026",
-    annee: "2026",
+    date: "SAE · dec. 2025",
+    annee: "2025",
     accroche: "Un véhicule autonome qui évite les obstacles",
     couverture: "",
     contexte: "Véhicule autonome capable d'éviter des obstacles, réalisé en SAE à l'IUT.",
@@ -146,8 +146,8 @@ const PROJETS = [
   /* ----- 04 · Console de morpion ----- */
   {
     titre: "Console de morpion Arduino",
-    date: "Projet perso",
-    annee: "Perso",
+    date: "SAE · oct. 2026",
+    annee: "2026",
     accroche: "Un morpion à deux joueurs sur écran TFT",
     couverture: "",
     contexte:
