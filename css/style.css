@@ -323,7 +323,7 @@ footer nav {
 }
 .body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 40px;
   padding: 50px 20px 90px;
   max-width: 1200px;
@@ -334,11 +334,12 @@ footer nav {
 }
 .l h2 {
   font:
-    900 clamp(48px, 8vw, 110px)/0.9 "Big Shoulders Display",
+    900 clamp(36px, 5.8vw, 88px)/0.9 "Big Shoulders Display",
     Impact,
     sans-serif;
   text-transform: uppercase;
   margin: 10px 0 20px;
+  overflow-wrap: anywhere; /* un mot trop long passe à la ligne au lieu de déborder */
 }
 .tg {
   display: flex;
@@ -580,7 +581,7 @@ figcaption {
     display: none;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .body {
     grid-template-columns: 1fr;
     gap: 24px;

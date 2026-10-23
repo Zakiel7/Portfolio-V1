@@ -100,7 +100,10 @@ function afficherCouverture(ligne) {
   const i = +ligne.dataset.i;
   const image = PROJETS[i].couverture;
   scramble(ligne.querySelector("b"));
-  couverture.style.setProperty("--img", image ? `url("${image}")` : fondParDefaut(i));
+  // Chemin absolu obligatoire : une URL relative placée dans une variable CSS
+  // serait lue depuis css/style.css (donc css/images/...) et non depuis la page.
+  const url = image ? new URL(image, document.baseURI).href : "";
+  couverture.style.setProperty("--img", image ? `url("${url}")` : fondParDefaut(i));
   couverture.classList.add("on");
   if (i !== dernierSurvol) {
     glitch();
