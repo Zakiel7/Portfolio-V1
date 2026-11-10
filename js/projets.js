@@ -168,7 +168,7 @@ const PROJETS = [
     date: "SAE · nov. 2026",
     annee: "2026",
     accroche: "Un morpion à deux joueurs sur écran TFT",
-    couverture: "images/retro-console.webp",
+    couverture: "images/console.webp",
     contexte:
       "Une petite console de jeu : un morpion sur écran TFT, jouable à deux, chaque joueur ayant ses quatre flèches et un bouton de validation.",
     actions: [
