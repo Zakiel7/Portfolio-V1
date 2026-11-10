@@ -182,7 +182,7 @@ const PROJETS = [
     outils: ["Arduino", "Écran TFT ILI9341", "MCP23018 (I²C)"],
     retenu:
       "J'ai appris à faire communiquer un microcontrôleur avec plusieurs composants en I²C et à structurer un programme avec un menu et plusieurs modes.",
-    competences: ["C1 · Concevoir", "Autonomie"],
+    competences: ["C1 · Concevoir", "Travail en équipe"],
     photos: [],
     pasAPas: [],
   },
