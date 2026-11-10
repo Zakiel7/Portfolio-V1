@@ -70,7 +70,7 @@ new IntersectionObserver(
    3. COUVERTURE EN FOND + GLITCH HORIZONTAL (au survol d'un projet)
    --------------------------------------------------------------------- */
 const couverture = $("#cv");
-const NB_BANDES = 12; // l'image est découpée en bandes qui se décalent
+const NB_BANDES = 8; // l'image est découpée en bandes qui se décalent
 let dernierSurvol = -1;
 
 for (let i = 0; i < NB_BANDES; i++) {
