@@ -1,8 +1,7 @@
 /* =====================================================================
    COMPORTEMENT DU SITE
-   Le contenu (projets, profil) est dans projets.js : ne modifie pas ici
-   pour changer un texte.
-
+   Le contenu (projets, profil) est dans projets.js
+   
    Sommaire
      1. Outils                      4. Pages (fiche projet + profil)
      2. Liste des projets           5. Thème, horloge, bandeau
@@ -70,7 +69,7 @@ new IntersectionObserver(
    3. COUVERTURE EN FOND + GLITCH HORIZONTAL (au survol d'un projet)
    --------------------------------------------------------------------- */
 const couverture = $("#cv");
-const NB_BANDES = 8; // l'image est découpée en bandes qui se décalent
+const NB_BANDES = 16; // l'image est découpée en bandes qui se décalent
 let dernierSurvol = -1;
 
 for (let i = 0; i < NB_BANDES; i++) {
