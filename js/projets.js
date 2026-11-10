@@ -98,11 +98,30 @@ const PROJETS = [
     pasAPas: [], // ← EMPLACEMENT : l'idée, la conception, les essais, etc.
   },
 
-  /* ----- 02 · Chaîne de production ----- */
+     /* ----- 02 · FabLab GEII ----- */
+  {
+    titre: "FabLab GEII",
+    date: "Asso · depuis fév. 2026",
+    annee: "2026",
+    accroche: "L'asso que j'ai cofondée et que je préside",
+    couverture: "images/fablab-impression3d.webp",
+    contexte:
+      "Co-fondateur et président de l'association FabLab de l'IUT : j'organise la vie de l'asso et je m'occupe de sa communication sur les réseaux sociaux.",
+    actions: [
+      ["Organisation", "Pilotage de l'association au quotidien."],
+      ["Communication", "Animation des réseaux sociaux de l'asso."],
+    ],
+    retenu: "Présider une asso m'apprend à organiser, à communiquer clairement et à faire avancer un projet collectif.",
+    competences: ["Travail en équipe", "Communication"],
+    photos: [],
+    pasAPas: [],
+  },
+
+  /* ----- 03 · Chaîne de production ----- */
   {
     titre: "Chaîne de production automatisée",
-    date: "SAE · nov. 2025",
-    annee: "2025",
+    date: "SAE · mai. 2026",
+    annee: "2026",
     accroche: "Une ligne multi-stations qui trie des jetons par couleur",
     couverture: "",
     contexte:
@@ -123,11 +142,11 @@ const PROJETS = [
     pasAPas: [],
   },
 
-  /* ----- 03 · Smart Car ----- */
+  /* ----- 04 · Smart Car ----- */
   {
     titre: "Smart Car",
-    date: "SAE · janv. – mai 2026",
-    annee: "2026",
+    date: "SAE · nov. 2025",
+    annee: "2025",
     accroche: "Un véhicule autonome qui évite les obstacles",
     couverture: "",
     contexte: "Véhicule autonome capable d'éviter des obstacles, réalisé en SAE à l'IUT.",
@@ -143,11 +162,11 @@ const PROJETS = [
     pasAPas: [],
   },
 
-  /* ----- 04 · Console de morpion ----- */
+  /* ----- 05 · Console de morpion ----- */
   {
     titre: "Console de morpion Arduino",
-    date: "Projet perso",
-    annee: "Perso",
+    date: "SAE · nov. 2026",
+    annee: "2026",
     accroche: "Un morpion à deux joueurs sur écran TFT",
     couverture: "",
     contexte:
@@ -164,27 +183,6 @@ const PROJETS = [
     retenu:
       "J'ai appris à faire communiquer un microcontrôleur avec plusieurs composants en I²C et à structurer un programme avec un menu et plusieurs modes.",
     competences: ["C1 · Concevoir", "Autonomie"],
-    photos: [],
-    pasAPas: [],
-  },
-
-  /* ----- 05 · Amplificateur audio ----- */
-  {
-    titre: "Amplificateur audio à composants discrets",
-    date: "Projet perso",
-    annee: "Perso",
-    accroche: "Un ampli audio fait de composants discrets",
-    couverture: "",
-    contexte:
-      "Un amplificateur audio réalisé avec des composants individuels plutôt qu'avec un circuit intégré tout fait.",
-    actions: [
-      ["Conception", "Choix et dimensionnement des composants de l'amplificateur."],
-      ["Réalisation", "Montage et soudure du circuit, puis essais et réglages."],
-    ],
-    outils: ["Composants discrets", "Soudure"],
-    retenu:
-      "J'ai appris à comprendre ce que fait chaque composant dans un circuit, au lieu de m'appuyer sur un circuit intégré.",
-    competences: ["C1 · Concevoir", "C2 · Vérifier", "Autonomie"],
     photos: [],
     pasAPas: [],
   },
@@ -229,25 +227,6 @@ const PROJETS = [
     ],
     retenu: "Concevoir, c'est composer avec des contraintes d'encombrement, de coût et de disponibilité du matériel.",
     competences: ["C1 · Concevoir", "Adaptabilité"],
-    photos: [],
-    pasAPas: [],
-  },
-
-  /* ----- 08 · FabLab GEII ----- */
-  {
-    titre: "FabLab GEII",
-    date: "Asso · depuis fév. 2026",
-    annee: "2026",
-    accroche: "L'asso que j'ai cofondée et que je préside",
-    couverture: "images/fablab-impression3d.webp",
-    contexte:
-      "Co-fondateur et président de l'association FabLab de l'IUT : j'organise la vie de l'asso et je m'occupe de sa communication sur les réseaux sociaux.",
-    actions: [
-      ["Organisation", "Pilotage de l'association au quotidien."],
-      ["Communication", "Animation des réseaux sociaux de l'asso."],
-    ],
-    retenu: "Présider une asso m'apprend à organiser, à communiquer clairement et à faire avancer un projet collectif.",
-    competences: ["Travail en équipe", "Communication"],
     photos: [],
     pasAPas: [],
   },
