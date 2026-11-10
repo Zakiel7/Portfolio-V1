@@ -33,7 +33,7 @@ const PROFIL = {
   presentation:
     "Étudiant en 2e année de BUT GEII, parcours Automatisme et Informatique Industrielle. J'automatise des lignes, je programme des microcontrôleurs et je construis mes propres robots.",
   recherche:
-    "Je cherche un stage de 10 semaines dès le 20 avril 2027, en automatisme, électronique embarquée ou robotique.",
+    "Je cherche un stage de 10 semaines dès le 3 mai 2027, en automatisme, électronique embarquée ou robotique.",
   // Petits blocs « titre / texte » affichés dans « Parcours en bref »
   parcours: [
     ["Formation", "BUT GEII, parcours AII, à l'IUT de Toulouse (depuis 2025)."],
