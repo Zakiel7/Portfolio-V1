@@ -123,7 +123,7 @@ const PROJETS = [
     date: "SAE · mai. 2026",
     annee: "2026",
     accroche: "Une ligne multi-stations qui trie des jetons par couleur",
-    couverture: "",
+    couverture: "images/chaine-de-prod.jpg",
     contexte:
       "Tri et stockage de jetons par couleur sur une ligne de production à plusieurs stations, réalisés en SAE à l'IUT.",
     actions: [
@@ -148,7 +148,7 @@ const PROJETS = [
     date: "SAE · nov. 2025",
     annee: "2025",
     accroche: "Un véhicule autonome qui évite les obstacles",
-    couverture: "",
+    couverture: "images/smart-car.jpg",
     contexte: "Véhicule autonome capable d'éviter des obstacles, réalisé en SAE à l'IUT.",
     actions: [
       ["Lecture des capteurs", "Lecture de capteurs à ultrasons pour détecter les obstacles."],
