@@ -542,13 +542,13 @@ figcaption {
   background-position: center;
 }
 #cv.gl i {
-  animation: gl 0.5s steps(1) both;
+  animation: gl 0.2s steps(1) both;
 }
 @keyframes gl {
   0% {
     transform: translateX(var(--d));
   }
-  20% {
+  25% {
     transform: translateX(calc(var(--d) * -0.7));
   }
   40% {
@@ -557,7 +557,7 @@ figcaption {
   60% {
     transform: translateX(calc(var(--d) * -0.4));
   }
-  80% {
+  70% {
     transform: translateX(calc(var(--d) * 0.25));
   }
   100% {
