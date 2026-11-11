@@ -69,7 +69,7 @@ new IntersectionObserver(
    3. COUVERTURE EN FOND + GLITCH HORIZONTAL (au survol d'un projet)
    --------------------------------------------------------------------- */
 const couverture = $("#cv");
-const NB_BANDES = 12; // l'image est découpée en bandes qui se décalent
+const NB_BANDES = 24; // l'image est découpée en bandes qui se décalent
 let dernierSurvol = -1;
 
 for (let i = 0; i < NB_BANDES; i++) {
@@ -77,7 +77,7 @@ for (let i = 0; i < NB_BANDES; i++) {
   const haut = (i * 100) / NB_BANDES;
   const bas = 100 - ((i + 1) * 100) / NB_BANDES;
   bande.style.clipPath = `inset(${haut}% 0 ${bas}% 0)`;
-  bande.style.setProperty("--d", (i % 2 ? 1 : -1) * (14 + Math.random() * 60) + "px"); // décalage de la bande
+  bande.style.setProperty("--d", (i % 2 ? 1 : -1) * (14 + Math.random() * 120) + "px"); // décalage de la bande
   couverture.append(bande);
 }
 
