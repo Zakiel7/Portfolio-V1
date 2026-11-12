@@ -254,6 +254,33 @@ addEventListener("keydown", (e) => {
   if (e.key === "Escape" && !page.hidden) fermerPage();
 });
 
+/* ----- Terminal Interactif ----- */
+const inputCmd = $("#terminal-input");
+const outputCmd = $("#terminal-output");
+
+const COMMANDES = {
+  help: "Commandes dispo : help, status, skills, contact, clear",
+  status: "Statut : Recherche de stage de 10 semaines (dès le 3 mai 2027).",
+  skills: "Stack : C/C++, Python, Automatismes (Siemens/Schneider), Embarqué (STM32, ESP32), Git, Docker.",
+  contact: "Email : mateo.brandy@etu.iut-tlse3.fr — Tél : 06.48.60.32.76"
+};
+
+if (inputCmd) {
+  inputCmd.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const val = inputCmd.value.trim().toLowerCase();
+      if (val === "clear") {
+        outputCmd.textContent = "";
+      } else {
+        const reponse = COMMANDES[val] || `Commande introuvable : ${val}. Tape « help ».`;
+        outputCmd.textContent += `\nroot@mateo:~# ${val}\n${reponse}`;
+      }
+      inputCmd.value = "";
+      outputCmd.scrollTop = outputCmd.scrollHeight;
+    }
+  });
+}
+
 /* ---------------------------------------------------------------------
    5. THÈME, HORLOGE, BANDEAU
    --------------------------------------------------------------------- */
