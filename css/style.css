@@ -468,9 +468,46 @@ figcaption {
   color: var(--mute);
 }
 
+/* ============================================================
+   9. Terminal Interactif
+   ============================================================ */
+
+.terminal-box {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 16px;
+  border: 1px solid var(--line);
+  font-family: inherit;
+  font-size: 13px;
+}
+#terminal-output {
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #a0a0a0;
+}
+.terminal-input-line {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.terminal-input-line span {
+  color: var(--or);
+  font-weight: 700;
+}
+#terminal-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font: inherit;
+  outline: none;
+}
 
 /* ============================================================
-   9. AVION EN PAPIER (curseur)
+   10. AVION EN PAPIER (curseur)
    ============================================================ */
 
 #pl {
@@ -519,7 +556,7 @@ figcaption {
   transform: translate(7px, 15px) scale(0.6);
 }
 /* ============================================================
-   10. COUVERTURE EN FOND + GLITCH
+   11. COUVERTURE EN FOND + GLITCH
    ============================================================ */
 
 #cv {
@@ -565,7 +602,7 @@ figcaption {
   }
 }
 /* ============================================================
-   11. ADAPTATIONS : souris, mobile, animations réduites
+   12. ADAPTATIONS : souris, mobile, animations réduites
    ============================================================ */
 
 @media (hover: hover) and (pointer: fine) {
@@ -596,3 +633,4 @@ figcaption {
     transform: none;
   }
 }
+
