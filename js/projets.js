@@ -34,7 +34,6 @@ const PROFIL = {
     "Étudiant en 2e année de BUT GEII, parcours Automatisme et Informatique Industrielle. J'automatise des lignes, je programme des microcontrôleurs et je construis mes propres robots.",
   recherche:
     "Je cherche un stage de 10 semaines dès le 3 mai 2027, en automatisme, électronique embarquée ou robotique.",
-  // Petits blocs « titre / texte » affichés dans « Parcours en bref »
   parcours: [
     ["Formation", "BUT GEII, parcours AII, à l'IUT de Toulouse (depuis 2025)."],
     ["Vie associative", "Co-fondateur et président du FabLab GEII : j'organise l'asso et j'anime ses réseaux sociaux."],
@@ -44,9 +43,15 @@ const PROFIL = {
       "Animateur au festival Futur Proche (Toulouse, 15 oct. 2026) : atelier sur la consommation électrique et présentation de projets techniques au public.",
     ],
   ],
+  materiel: [
+    ["Instruments & Labo", "Oscilloscopes, générateurs de signaux, alimentations de paillasse, multimètres numériques."],
+    ["Automates & Industriel", "Automates Siemens et Schneider, programmation Ladder et GRAFCET, pupitres pneumatiques Festo."],
+    ["Microcontrôleurs", "STM32 Nucleo, ESP32-CAM, Arduino, gestion des bus de communication (I²C, SPI, UART)."],
+    ["Prototypage", "Impression 3D, conception CAO, outillage d'atelier et assemblage de composants."],
+  ],
   legende:
     "C1 Concevoir, C2 Vérifier, C3 Maintenir : les compétences communes du BUT GEII. Clique sur un projet pour voir les détails.",
-  cv: "cv.pdf", // le fichier doit être à côté de index.html
+  cv: "cv.pdf",
 };
 
 /* ---------------------------------------------------------------------
