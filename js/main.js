@@ -337,11 +337,12 @@ function ouvrirProfil() {
        <p>BUT 2 GEII · parcours AII · IUT de Toulouse</p>
        <h2 id="dt-t">Profil</h2>
        <p>${PROFIL.recherche}</p>
+       <h3>Compétences par projet</h3>
+       ${competencesParProjet}
+       <p class="lg">${PROFIL.legende}</p>
      </div>
      <div class="r">
        <h3>Qui je suis</h3><p>${PROFIL.presentation}</p>
-       <h3>Compétences par projet</h3>${competencesParProjet}
-       <p class="lg">${PROFIL.legende}</p>
        <h3>Matériel & Labo</h3>${materiel}
        <h3>Parcours en bref</h3>${parcours}
        <h3>CV</h3>
