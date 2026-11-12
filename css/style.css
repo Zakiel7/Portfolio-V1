@@ -360,14 +360,14 @@ footer nav {
 .r {
   max-width: 60ch;
 }
-.r h3 {
+.body h3 {
   font-weight: 400;
   color: var(--mute);
   margin: 34px 0 8px;
   border-top: 1px solid var(--line);
   padding-top: 10px;
 }
-.r h3:first-child {
+.body h3:first-child {
   margin-top: 0;
   border: 0;
   padding: 0;
