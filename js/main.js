@@ -324,3 +324,31 @@ document.addEventListener("pointerover", (e) => {
   avionImage.style.transform = `rotate(${angle}deg)`;
   requestAnimationFrame(voler);
 })();
+
+function ouvrirProfil() {
+  const competencesParProjet = PROJETS.map(
+    (p, i) => `<button class="pj" data-i="${i}"><b>[${pad(i + 1)}] ${p.titre}</b>${pastilles(p.competences)}</button>`,
+  ).join("");
+  const parcours = PROFIL.parcours.map(([titre, texte]) => `<h4>${titre}</h4><p>${texte}</p>`).join("");
+  const materiel = PROFIL.materiel.map(([titre, texte]) => `<h4>${titre}</h4><p>${texte}</p>`).join("");
+
+  afficherPage(
+    `<div class="l">
+       <p>BUT 2 GEII · parcours AII · IUT de Toulouse</p>
+       <h2 id="dt-t">Profil</h2>
+       <p>${PROFIL.recherche}</p>
+     </div>
+     <div class="r">
+       <h3>Qui je suis</h3><p>${PROFIL.presentation}</p>
+       <h3>Compétences par projet</h3>${competencesParProjet}
+       <p class="lg">${PROFIL.legende}</p>
+       <h3>Matériel & Labo</h3>${materiel}
+       <h3>Parcours en bref</h3>${parcours}
+       <h3>CV</h3>
+       <p>Le détail de mes formations et de mes expériences.</p>
+       <a class="go" href="${PROFIL.cv}" target="_blank" rel="noopener">Ouvrir mon CV (PDF)</a>
+     </div>`,
+    false,
+    false,
+  );
+}
